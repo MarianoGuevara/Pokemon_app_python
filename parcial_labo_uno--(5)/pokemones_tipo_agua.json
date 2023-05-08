@@ -1,0 +1,164 @@
+{
+    "agua": [
+        {
+            "nombre_poke": "Squirtle",
+            "fortaleza": 65,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Wartortle",
+            "fortaleza": 80,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Blastoise",
+            "fortaleza": 100,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Psyduck",
+            "fortaleza": 52,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Golduck",
+            "fortaleza": 82,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Poliwag",
+            "fortaleza": 50,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Poliwhirl",
+            "fortaleza": 65,
+            "tipo_fortaleza": "Ambos"
+        },
+        {
+            "nombre_poke": "Poliwrath",
+            "fortaleza": 95,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Tentacool",
+            "fortaleza": 40,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Tentacruel",
+            "fortaleza": 70,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Slowpoke",
+            "fortaleza": 65,
+            "tipo_fortaleza": "Ambos"
+        },
+        {
+            "nombre_poke": "Slowbro",
+            "fortaleza": 110,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Seel",
+            "fortaleza": 55,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Dewgong",
+            "fortaleza": 80,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Shellder",
+            "fortaleza": 100,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Cloyster",
+            "fortaleza": 180,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Krabby",
+            "fortaleza": 105,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Kingler",
+            "fortaleza": 130,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Horsea",
+            "fortaleza": 70,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Seadra",
+            "fortaleza": 95,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Goldeen",
+            "fortaleza": 67,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Seaking",
+            "fortaleza": 92,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Staryu",
+            "fortaleza": 55,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Starmie",
+            "fortaleza": 85,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Magikarp",
+            "fortaleza": 55,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Gyarados",
+            "fortaleza": 125,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Lapras",
+            "fortaleza": 85,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Vaporeon",
+            "fortaleza": 110,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Omanyte",
+            "fortaleza": 100,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Omastar",
+            "fortaleza": 125,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Kabuto",
+            "fortaleza": 90,
+            "tipo_fortaleza": "Defensa"
+        },
+        {
+            "nombre_poke": "Kabutops",
+            "fortaleza": 115,
+            "tipo_fortaleza": "Ataque"
+        }
+    ]
+}

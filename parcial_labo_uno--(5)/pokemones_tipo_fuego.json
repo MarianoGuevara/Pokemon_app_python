@@ -1,0 +1,64 @@
+{
+    "fuego": [
+        {
+            "nombre_poke": "Charmander",
+            "fortaleza": 52,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Charmeleon",
+            "fortaleza": 64,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Charizard",
+            "fortaleza": 84,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Vulpix",
+            "fortaleza": 41,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Ninetales",
+            "fortaleza": 76,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Growlithe",
+            "fortaleza": 70,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Arcanine",
+            "fortaleza": 110,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Ponyta",
+            "fortaleza": 85,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Rapidash",
+            "fortaleza": 100,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Magmar",
+            "fortaleza": 95,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Flareon",
+            "fortaleza": 130,
+            "tipo_fortaleza": "Ataque"
+        },
+        {
+            "nombre_poke": "Moltres",
+            "fortaleza": 100,
+            "tipo_fortaleza": "Ataque"
+        }
+    ]
+}
