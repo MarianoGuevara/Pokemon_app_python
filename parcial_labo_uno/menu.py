@@ -35,7 +35,7 @@ def pedir_dato(mensaje_input:str)->int:
             if dato > 0 and dato < 9:
                 break
     return dato
-#pedir_dato("Ingrese numero: ")
+
 
 def accionar_segun_opcion():
     '''
@@ -59,7 +59,6 @@ def accionar_segun_opcion():
                 print("Datos ya traidos y organizados con exito" 
                     " previamente")
             else:
-                bandera = True
                 lista_pokemones = traer_datos_desde_archivos(ruta_csv)
 
                 if lista_pokemones == False:
@@ -71,6 +70,7 @@ def accionar_segun_opcion():
                         'u ocurrio otro problema con el diccionario')
                 else:
                     print("Datos traidos y organizados con exito!!")
+                    bandera = True
 
         elif bandera == False:
             print("Llamar primero a 1")
