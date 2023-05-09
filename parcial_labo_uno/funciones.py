@@ -357,51 +357,41 @@ def pedir_datos_pokemon(lista:list):
     '''
     lista_pokemones_inicial = []
 
-    while True:
-        n_poke = pedir_int_pokemon("Ingresa n° de pokedex: ")
-        if n_poke == False or n_poke < 152:
-            return False
-        else:
-            lista_pokemones_inicial.append(n_poke)
+    n_poke = pedir_int_pokemon("Ingresa n° de pokedex: ")
+    if n_poke == False or n_poke < 152:
+        return False
+    else:
+        lista_pokemones_inicial.append(n_poke)
 
-        nombre_poke = pedir_string("Ingresa nombre del pokemon: ")
-        if nombre_poke == False:
-            return False
-        else:
-            lista_pokemones_inicial.append(nombre_poke)
+    nombre_poke = pedir_string("Ingresa nombre del pokemon: ")
+    if nombre_poke == False:
+        return False
+    else:
+        lista_pokemones_inicial.append(nombre_poke)
 
-        tipo_poke = input("Ingrese el/los tipos del"\
-                                    "pokemon separados por '/': ")
-        lista_pokemones_inicial.append(tipo_poke)    
+    tipo_poke = input("Ingrese el/los tipos del"\
+                                "pokemon separados por '/': ")
+    lista_pokemones_inicial.append(tipo_poke)    
 
-        ataque = pedir_int_pokemon("Poder de ataque: ")
-        if ataque == False:
-            return False
-        else:
-            lista_pokemones_inicial.append(ataque)
+    ataque = pedir_int_pokemon("Poder de ataque: ")
+    if ataque == False:
+        return False
+    else:
+        lista_pokemones_inicial.append(ataque)
 
-        defensa = pedir_int_pokemon("Poder de defensa: ")
-        if defensa == False:
-            return False
-        else:
-            lista_pokemones_inicial.append(defensa)
+    defensa = pedir_int_pokemon("Poder de defensa: ")
+    if defensa == False:
+        return False
+    else:
+        lista_pokemones_inicial.append(defensa)
 
-        habilid_poke = input("Ingrese la/las habilidades del"\
-                                "pokemon separados por '|*|': ")
-        lista_pokemones_inicial.append(habilid_poke)    
+    habilid_poke = input("Ingrese la/las habilidades del"\
+                            "pokemon separados por '|*|': ")
+    lista_pokemones_inicial.append(habilid_poke)    
 
-        nuevo_poke = estilar_diccionario_pokemon_basico(ataque, 
-                                defensa, lista_pokemones_inicial)
-        lista.append(nuevo_poke)
-
-        while True:
-            rta = pedir_string("Desea ingresar otro pokemon? (si o no): ")
-            if rta != "si" and rta != "no":
-                pass
-            else:
-                break
-        if rta == "no":
-            break
+    nuevo_poke = estilar_diccionario_pokemon_basico(ataque, 
+                            defensa, lista_pokemones_inicial)
+    lista.append(nuevo_poke)
 
 
 def nuevos_pokemones_a_string(lista:list):
