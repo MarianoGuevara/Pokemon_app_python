@@ -17,11 +17,15 @@ def crear_menu()->str:
     5. Listar pokemones ordenados (por fuerza mayor a menor)
     6. Guardar Json
     7. Leer Json
-    8. SALIR
+    -
+    8- Agregar pokemones a la lista
+    9- Actualizar csv pokemones
+    -
+    10. SALIR
     """
     return menu
 
-def pedir_dato(mensaje_input:str)->int:
+def pedir_dato_numerico_menu(mensaje_input:str)->int:
     '''
     Brief: Pide un dato input y lo devuelve
     Parametros: mensaje_input: Recibe un mensaje string que
@@ -32,7 +36,7 @@ def pedir_dato(mensaje_input:str)->int:
         dato = input(mensaje_input)
         if dato.isdigit() == True:
             dato = int(dato)
-            if dato > 0 and dato < 9:
+            if dato > 0 and dato < 11:
                 break
     return dato
 
@@ -50,9 +54,9 @@ def accionar_segun_opcion():
     lista_pokemones = []
     while True:
         print(crear_menu())
-        dato_usuario = pedir_dato("Ingresa una opcion del menu: ")
+        dato_usuario = pedir_dato_numerico_menu("Ingresa una opcion del menu: ")
 
-        if dato_usuario == 8:
+        if dato_usuario == 10:
             break
         elif dato_usuario == 1:
             if bandera == True:
@@ -111,15 +115,18 @@ def accionar_segun_opcion():
         elif dato_usuario == 5:
             ordenados = listar_pokemones_ordenados(lista_pokemones,
                                     "ataque", "nombre")
+
             if ordenados == False:
                 print("Lista incorrecta")
             elif ordenados == -1:
                 print("Parametros incorrectos")
             else:
                 print(ordenados)
+
         elif dato_usuario == 6:
             msj_archivo = guardar_json(lista_pokemones, 'tipo', 
                                     "ataque", "defensa")
+
             if msj_archivo == False:
                 print("Key inválida")
             elif msj_archivo == -1:
@@ -130,9 +137,11 @@ def accionar_segun_opcion():
                 print("Lista inválida")
             else:
                 print("Archivo json generado y guardado exitosamente")
-        else:
+
+        elif dato_usuario == 7:
             lectura_json = leer_json("Ingrese un tipo de pokemon"\
                     " sobre el cual quiera abrir su archivo json: ")
+
             if lectura_json == False:
                 print("No existe un archivo con ese tipo de pokemon"\
                 ", por lo que leerlo es imposible."\
@@ -141,4 +150,23 @@ def accionar_segun_opcion():
                 print("Problema en el contenido del json")
             else:
                 print(lectura_json)
+
+        elif dato_usuario == 8:
+            datos_pokemon = pedir_datos_pokemon(lista_pokemones)
+
+            if datos_pokemon == False:
+                print("Alguno de los datos del pokemon ingresado"\
+                    " es inválido. Inténtelo de nuevo")
+            else:
+                pass
+        else:
+            confirmacion_csv = actualizar_csv(ruta_csv, lista_pokemones)
+
+            if confirmacion_csv == -5:
+                print("El archivo no exite")
+            elif confirmacion_csv == -1:
+                print("La lista del parametro es incorrecta")
+            else:
+                print("Csv actualizado")
+
 accionar_segun_opcion()
