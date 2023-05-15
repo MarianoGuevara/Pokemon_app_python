@@ -1,3 +1,4 @@
+from sanitizacion_string import *
 import re
 
 def estilar_diccionario_pokemon_basico(ataque:int, defensa:int,

@@ -1,5 +1,5 @@
-from funciones import *
-
+from funcionalidades_del_menu import *
+from nuevos_requerimientos import *
 
 def crear_menu()->str:
     '''
@@ -17,10 +17,10 @@ def crear_menu()->str:
     5. Listar pokemones ordenados (por fuerza mayor a menor)
     6. Guardar Json
     7. Leer Json
-    -
+    ----------------------------------------------------------
     8- Agregar pokemones a la lista
     9- Actualizar csv pokemones
-    -
+    ----------------------------------------------------------
     10. SALIR
     """
     return menu
@@ -152,13 +152,15 @@ def accionar_segun_opcion():
                 print(lectura_json)
 
         elif dato_usuario == 8:
+            #print(listar_tipos_o_habilidades(lista_pokemones, 'habilidades'))
+            #print(nuevos_pokemones_a_string(lista_pokemones))
             datos_pokemon = pedir_datos_pokemon(lista_pokemones)
 
             if datos_pokemon == False:
-                print("Alguno de los datos del pokemon ingresado"\
+                print("Alguno/s de los datos del pokemon ingresado"\
                     " es inválido. Inténtelo de nuevo")
             else:
-                pass
+                print("Nuevo pokemon agregado con exito")
         else:
             confirmacion_csv = actualizar_csv(ruta_csv, lista_pokemones)
 

@@ -43,3 +43,4 @@ def sanitizar_string(string:str)->str:
     string = reemplazar_tildes(string)
     string = reemplazar_caracter_especial_y_low(string)
     return string
+

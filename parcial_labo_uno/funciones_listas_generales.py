@@ -1,4 +1,4 @@
-from sanitizar_string import *
+from sanitizacion_string import *
 
 
 def listar_tipos_sin_repetido(lista:list, key:str):    

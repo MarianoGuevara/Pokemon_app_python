@@ -1,7 +1,7 @@
 from os import system 
 system("cls")
 
-from sanitizar_string import *
+from sanitizacion_string import *
 from funciones_listas_generales import *
 from estilos import *
 
@@ -9,7 +9,7 @@ import re
 import os
 import json
 
-ruta_csv = "pokemones.csv"
+ruta_csv = "parcial_labo_uno/pokemones.csv"
 
 
 def crear_texto_en_base_a_archivo(ruta_archivo:str)->str:
@@ -22,12 +22,14 @@ def crear_texto_en_base_a_archivo(ruta_archivo:str)->str:
     '''
     if os.path.exists(ruta_archivo):
         with open(ruta_archivo, "r", encoding="utf-8") as archivo:
-            next(archivo)
             texto = archivo.read()
+            texto = re.sub("N° Pokedex,Nombre,Tipo,Poder de Ataque,P"\
+                        "oder de Defensa,Habilidades", "", texto)
+            archivo.close()
             return texto
     else:
         return False
-
+# print(crear_texto_en_base_a_archivo(ruta_csv))
 
 def crear_lista_pokemones(ruta:str):
     '''
@@ -45,11 +47,11 @@ def crear_lista_pokemones(ruta:str):
         lista_pokemones_basica = re.split("\n", texto)
         lista_elemento_por_pokemon = []
         for pokemones in lista_pokemones_basica:
-            pokemones = pokemones.split(",")
-            if len(pokemones) != 1:
+            if len(pokemones) > 2:
+                pokemones = pokemones.split(",")
                 lista_elemento_por_pokemon.append(pokemones)
         return lista_elemento_por_pokemon
-# print(crear_lista_pokemones('pokemones.csv'))
+# print(crear_lista_pokemones(ruta_csv))
 
 
 def traer_datos_desde_archivos(ruta:str):
@@ -81,7 +83,8 @@ def traer_datos_desde_archivos(ruta:str):
             return lista_pokemones_final
         else:
             return -1
-# print(traer_datos_desde_archivos("pokemones.csv"))
+# print(traer_datos_desde_archivos("parcial_labo_uno/pokemones.csv"))
+
 
 def listar_cantidad_por_tipo(lista:list, key:str):
     '''
@@ -244,14 +247,14 @@ def guardar_json(lista:list, key:str, ataque:str, defensa:str):
         contador = chequear_coincidencias(lista_sin_repetido, tipo_ingresado)
 
         if contador != 0:
-            if os.path.exists("pokemon"
+            if os.path.exists("parcial_labo_uno/parcial_labo_uno/pokemon"
                             f"es_tipo_{tipo_ingresado}.json"):
                 return -1
             else:
                 if ataque != "ataque" or defensa != "defensa":
                     return False
                 else:
-                    archivo_json = open('pokem'\
+                    archivo_json = open('parcial_labo_uno/pokem'\
                     f'ones_tipo_{tipo_ingresado}'\
                     '.json', "w", encoding="utf-8")
                     diccionario_json = {}
@@ -290,8 +293,8 @@ def leer_json(msj_input):
     '''
     input_dato = input(msj_input)
     input_dato = sanitizar_string(input_dato)
-    if os.path.exists(f"pokemones_tipo_{input_dato}.json"):
-        archivo_json = open(f"pokemones_tipo_{input_dato}.j"\
+    if os.path.exists(f"parcial_labo_uno/pokemones_tipo_{input_dato}.json"):
+        archivo_json = open(f"parcial_labo_uno/pokemones_tipo_{input_dato}.j"\
                             "son", "r", encoding="utf-8")
         texto = json.load(archivo_json)
 
@@ -310,131 +313,3 @@ def leer_json(msj_input):
         return texto_final
     else:
         return False
-
-
-#________________________________________________________________________________________________________
-
-
-def pedir_string(msj:str):
-    '''
-    Brief: El usuario ingresa un string el cual será sanitizado 
-    Parametros: msj: representa el mensaje que aparecerá por
-                pantalla junto al input
-    Return: devuelve el string si es correcto y falso si no lo es
-    '''
-    dato = input(msj)
-    booleano = dato.isalpha()
-    if booleano == False:
-        return False
-    else:
-        dato = sanitizar_string(dato)
-        return dato
-
-
-def pedir_int_pokemon(msj:str)->int:
-    '''
-    Brief: El usuario ingresa un string que será pasado a
-    entero
-    Parametros: msj: representa el mensaje que aparecerá por
-                pantalla junto al input
-    Return: devuelve el string pasado a entero si es 
-    correcto y falso si no lo es
-    '''
-    dato = input(msj)
-
-    if dato.isdigit() == False:
-        return False
-    else:
-        return int(dato)
-
-
-def pedir_datos_pokemon(lista:list):
-    '''
-    Brief: Pide todos los datos requeridos para el nuevo pokemon
-    y los agrega a una lista
-    Parametros: lista: será la lista de pokemones
-    Return: 
-    '''
-    lista_pokemones_inicial = []
-
-    n_poke = pedir_int_pokemon("Ingresa n° de pokedex: ")
-    if n_poke == False or n_poke < 152:
-        return False
-    else:
-        lista_pokemones_inicial.append(n_poke)
-
-    nombre_poke = pedir_string("Ingresa nombre del pokemon: ")
-    if nombre_poke == False:
-        return False
-    else:
-        lista_pokemones_inicial.append(nombre_poke)
-
-    tipo_poke = input("Ingrese el/los tipos del"\
-                                "pokemon separados por '/': ")
-    lista_pokemones_inicial.append(tipo_poke)    
-
-    ataque = pedir_int_pokemon("Poder de ataque: ")
-    if ataque == False:
-        return False
-    else:
-        lista_pokemones_inicial.append(ataque)
-
-    defensa = pedir_int_pokemon("Poder de defensa: ")
-    if defensa == False:
-        return False
-    else:
-        lista_pokemones_inicial.append(defensa)
-
-    habilid_poke = input("Ingrese la/las habilidades del"\
-                            "pokemon separados por '|*|': ")
-    lista_pokemones_inicial.append(habilid_poke)    
-
-    nuevo_poke = estilar_diccionario_pokemon_basico(ataque, 
-                            defensa, lista_pokemones_inicial)
-    lista.append(nuevo_poke)
-
-
-def nuevos_pokemones_a_string(lista:list):
-    '''
-    Brief: Convierte elementos de una lista a un 
-    string con formato
-    Parametros: lista: representa la lista de pokemons
-    Return: Si sale mal, false, si no, el string con
-    formato
-    '''
-    try:
-        lista_nuevos_poke = []
-        for pokemon in lista:
-            linea = f"{pokemon['pokedex']},{pokemon['nombre']},"\
-            f"{pokemon['tipo']},{pokemon['ataque']},"\
-            f"{pokemon['defensa']},{pokemon['habilidades']}"
-            lista_nuevos_poke.append(linea)
-        string_pokemones_nuevos = "\n".join(lista_nuevos_poke)
-        return string_pokemones_nuevos
-    except:
-        return False
-
-
-def actualizar_csv(ruta:str, lista:list):
-    '''
-    Brief: Abre un csv y lo actualiza con lo nuevo
-    Parametros: ruta: Ruta del csv de pokemones
-    Return: Devuelve true si salio bien, y false o 
-    n° negativo si salio mal
-    '''
-    if os.path.exists(ruta):
-        if type(lista) != list or len(lista) == 0:
-            return -1
-        else:
-            str_nuevos_pokes = nuevos_pokemones_a_string(lista)
-            if str_nuevos_pokes == False:
-                return False
-            else:
-                archivo = open(ruta, "w", encoding="utf-8")
-                archivo.write(str_nuevos_pokes)
-                archivo.close()
-                return True
-    else:
-        return -5
-
-
