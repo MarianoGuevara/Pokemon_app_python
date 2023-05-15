@@ -29,7 +29,7 @@ def crear_texto_en_base_a_archivo(ruta_archivo:str)->str:
             return texto
     else:
         return False
-# print(crear_texto_en_base_a_archivo(ruta_csv))
+
 
 def crear_lista_pokemones(ruta:str):
     '''
@@ -51,7 +51,6 @@ def crear_lista_pokemones(ruta:str):
                 pokemones = pokemones.split(",")
                 lista_elemento_por_pokemon.append(pokemones)
         return lista_elemento_por_pokemon
-# print(crear_lista_pokemones(ruta_csv))
 
 
 def traer_datos_desde_archivos(ruta:str):
@@ -83,7 +82,6 @@ def traer_datos_desde_archivos(ruta:str):
             return lista_pokemones_final
         else:
             return -1
-# print(traer_datos_desde_archivos("parcial_labo_uno/pokemones.csv"))
 
 
 def listar_cantidad_por_tipo(lista:list, key:str):

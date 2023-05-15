@@ -152,8 +152,6 @@ def accionar_segun_opcion():
                 print(lectura_json)
 
         elif dato_usuario == 8:
-            #print(listar_tipos_o_habilidades(lista_pokemones, 'habilidades'))
-            #print(nuevos_pokemones_a_string(lista_pokemones))
             datos_pokemon = pedir_datos_pokemon(lista_pokemones)
 
             if datos_pokemon == False:

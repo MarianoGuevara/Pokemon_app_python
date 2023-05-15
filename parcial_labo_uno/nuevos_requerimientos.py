@@ -40,7 +40,8 @@ def lista_datos(lista:list, parametro):
     lista_especifico = []
     for pokemon in lista:
         lista_especifico.append(pokemon[parametro])
-    return set(lista_especifico)
+    return list(set(lista_especifico))
+
 
 def listar_tipos_o_habilidades(lista, parametro):
     lista_especifico = []
@@ -63,11 +64,10 @@ def pedir_datos_pokemon(lista:list):
     lista_pokemones_inicial = []
 
     n_poke = pedir_int_pokemon("Ingresa n° de pokedex: ")
-    if n_poke == False or n_poke in lista_pokedex:
+    if n_poke in lista_pokedex:
         return False
     else:
         lista_pokemones_inicial.append(n_poke)
-
 
 
     nombre_poke = pedir_string("Ingresa nombre del pokemon: ")
@@ -81,10 +81,12 @@ def pedir_datos_pokemon(lista:list):
     tipo_poke = input("Ingrese el/los tipos del"\
                                 "pokemon separados por '/': ")
     tipo_poke = re.split("/", tipo_poke)
+    lista_final_tipo = []
     for tipo in tipo_poke:  
-        tipo = tipo.capitalize()
-    tipo_poke = "/".join(tipo_poke)
+        lista_final_tipo.append(tipo.capitalize())
+    tipo_poke = "/".join(lista_final_tipo)
     lista_pokemones_inicial.append(tipo_poke)    
+
 
     ataque = pedir_int_pokemon("Poder de ataque: ")
     if ataque == False:
@@ -102,14 +104,15 @@ def pedir_datos_pokemon(lista:list):
     habilid_poke = input("Ingrese la/las habilidades del"\
                             "pokemon separados por '|*|': ")
     habilid_poke = habilid_poke.split("|*|")
+    lista_final_habilidad = []
     for habilidad in habilid_poke:  
-        habilidad = habilidad.capitalize()
+        lista_final_habilidad.append(habilidad.capitalize())
     habilid_poke = "|*|".join(habilid_poke)
     lista_pokemones_inicial.append(habilid_poke)    
 
     nuevo_poke = estilar_diccionario_pokemon_basico(ataque, 
                             defensa, lista_pokemones_inicial)
-    
+
     lista.append(nuevo_poke)
 
 
