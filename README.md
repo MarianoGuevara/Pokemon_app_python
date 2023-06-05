@@ -1,6 +1,6 @@
-# parcial_laboratorio1_python_pokemones
+# parcial1_laboratorio1_python_pokemones
 -Primer parcial de la materia laboratorio hecho con Python
-
+(por consola)
 
 CONSIGNA
 Necesitamos crear un programa para poder gestionar nuestra mochila de
